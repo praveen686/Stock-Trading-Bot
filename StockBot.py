@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # In[1]:
 
 
@@ -13,26 +10,10 @@ SECRET_KEY = "yCvbRYWUW1yT6j1D69a1grHZ47hyctLfDw8WwduB" #replace it with your ow
 
 
 #SuperAI Trading Bot - optional cell
-#You need to run it only once when you create new environment
-#install and upgrade TA-Lib library
-
-#1. On Windows and if you are using Anaconda,  
-#open Anaconda Prompt and
-#write in Anaconda Prompt: conda install -c conda-forge ta-lib
-
-#2. If it doesn't work or if you work on Linux or Mac you may unahsh pip line and check this way 
-#!pip install TA-Lib --upgrade
-
-#3. You could also check this site to learn how else you could do install it
-#https://pypi.org/project/TA-Lib/
-
 
 # In[3]:
 
-
 #SuperAI Trading Bot - optional cell
-#You need to run it only once when you create new environment
-#install and upgrade all the libraries, packages, and modules which you don't have
 
 get_ipython().system('pip install alpaca-trade-api --upgrade')
 #https://pypi.org/project/alpaca-trade-api/
@@ -55,9 +36,7 @@ get_ipython().system('pip install yfinance --upgrade')
 
 # In[4]:
 
-
 #SuperAI Trading Bot - 2. mandatory cell to run
-#import all you need
 
 import alpaca_trade_api as tradeapi
 from alpaca_trade_api.rest import TimeFrame
@@ -84,23 +63,11 @@ print("vectorbt version: {}".format(vbt.__version__))
 
 # In[5]:
 
-
 #SuperAI Trading Bot - 3. mandatory cell to run
 
 (asset, asset_type, rounding) = ("BTCUSD", "crypto", 0)
 
-#if you want to trade crypto check: https://alpaca.markets/support/what-cryptocurrencies-does-alpaca-currently-support/
-#rounding declares the no of numbers after comma for orders
-#read more about minimum qty and qty increment at https://alpaca.markets/docs/trading/crypto-trading/
-
 #(asset, asset_type, data_source) = ("AAPL", "stock", "Yahoo") #("AAPL", "stock", "Alpaca")
-
-#if you want to trade stocks replace it with the ticker of the company you prefer: https://www.nyse.com/listings_directory/stock
-#you can also use "Alpaca" as a data_source
-#Alpaca gives you free access to more historical data, but in a free plan doesn't allow you to access data from last 15 minutes
-#Yahoo gives you access to data from last 15 minutes, but gives you only 7 days of historical data with 1-min interval at a time
-#from last month
-
 
 # In[6]:
 
@@ -141,14 +108,12 @@ def create_signal(open_prices, high_prices, low_prices, close_prices, volume,
 
 # In[7]:
 
-
 #SuperAI Trading Bot - 5. mandatory cell to run
 
 # PARAMETERS FOR CONNECTING TO ALPACA
 
 #The URLs we use here are for paper trading. If you want to use your bot with your live account, you should change these URLs to
-#those dedicated to live account at Alpaca. Just remember, that with live account you are using real money, 
-#so be sure that your bot works as you want it to work. Test your bot before you give it real money to trade.
+#those dedicated to live account at Alpaca
 APCA_API_BASE_URL = "https://paper-api.alpaca.markets"
 
 #Connecting to API
@@ -286,7 +251,6 @@ strategy_returns = ['0',0,0,0]
 
 
 # In[8]:
-
 
 #SuperAI Trading Bot - 6. mandatory cell to run
 
@@ -1267,30 +1231,14 @@ def SuperAI_Trading_Bot():
 
 # In[11]:
 
-
 #SuperAI Trading Bot - optional cell
-
-#the asset was declared at the beginning of the program, but you can change it here if you want
-
-#(asset, asset_type, rounding) = ("BTCUSD", "crypto", 0)
-#(asset, asset_type, data_source) = ("AAPL", "stock", "Yahoo")
 
 SuperAI_Backtester()
 
-
 # In[ ]:
-
-
-#SuperAI Trading Bot - 7. mandatory cell to run
-
-#the asset was declared at the beginning of the program, but you can change it here if you want
-#(asset, asset_type, rounding) = ("BTCUSD", "crypto", 0)
-#(asset, asset_type, data_source) = ("AAPL", "stock", "Yahoo")
 
 SuperAI_Trading_Bot()
 
-
-# In[ ]:
 
 
 
