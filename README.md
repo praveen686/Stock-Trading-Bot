@@ -3,4 +3,4 @@
  
  NOTE: Code is meant to run on Jupyter Notebook 
 
-Credits: SuperAI (Website: https://superai.pl/courses.html)
+For project inspiration and template, credit to: SuperAI (Website: https://superai.pl/courses.html)
